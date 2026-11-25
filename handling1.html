@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="box" style="
+    width:200px;
+    height:150px;
+    background:blue;">
+  </div>
+
+  <script>
+    let box = document.getElementById("box");
+
+    box.addEventListener("mouseover", function() {
+      box.style.background = "red";
+    });
+
+    box.addEventListener("mouseout", function() {
+      box.style.background = "blue";
+    });
+  </script>
+</body>
+</html>
