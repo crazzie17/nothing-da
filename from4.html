@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+    <h2>Feedback Form</h2>
+
+    <form onsubmit="return validate()">
+        Name:
+        <input type="text" id="name"><br><br>
+
+        Email:
+        <input type="text" id="email"><br><br>
+
+        Rating:
+        <select id="rating">
+            <option value="">Select Rating</option>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+        </select><br><br>
+
+        Feedback:
+        <textarea id="feedback"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validate() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let rating = document.getElementById("rating").value;
+            let feedback = document.getElementById("feedback").value;
+
+            if (name == "" || email == "" ||
+                rating == "" || feedback == "") {
+                alert("Please fill all fields");
+                return false;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert("Invalid Email");
+                return false;
+            }
+
+            if (feedback.length < 10) {
+                alert("Feedback must contain at least 10 characters");
+                return false;
+            }
+
+            alert("Feedback Submitted Successfully!");
+            return true;
+        }
+    </script>
+</body>
+</html>
