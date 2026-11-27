@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="box" style="
+    width:100px;
+    height:100px;
+    background:green;">
+  </div>
+
+  <script>
+    let box = document.getElementById("box");
+
+    box.addEventListener("dblclick", function() {
+      box.style.width = "200px";
+      box.style.height = "200px";
+    });
+  </script>
+</body>
+</html>
